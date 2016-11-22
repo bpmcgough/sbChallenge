@@ -1,0 +1,29 @@
+Push it to Github for code review and
+host it to Heroku for QA.
+
+ - Implement a “Date and Time picker” directive with a
+ timezone support using AngularJS.
+ X You may use any 3rd party libraries (Moment.js for example).
+ X The directive should consist of 2 sub-directives: Date input and Time input.
+ X Both inputs should be bound to the single model property.
+ X Time selector should be disabled if Date is not chosen.
+ X Both sub-directives should accept OPTIONAL “sb-before-render-item” function.
+ X This function accepts date/time object, which has “disabled” attribute.
+ Function may update that attribute (true/false) to disable/enable the date or
+ time.
+ X “ng-model” value should be updated only when both Date and Time chosen.
+ X If both Date and Time selected, and then user updates date to a value
+ which invalidates selected time, the selected time should be unset, and
+ ng-model should be updated to null. For example: working hours for weekdays
+ are 7AM-8PM, and for weekends - 10AM-4PM.
+ X If user select Friday 8AM, and then updates Day to Sunday,
+ previously selected time should become unset.
+ >> sbTimeZone should be one way binded. When time zone changes, the
+ selected time and date should persist to what they were before. For
+ example if currently selected Date/Time is 10/26/2016 10:15AM PDT and
+ time zone is changed to “America/New_York” (EST), the new selected
+ date/time should be 10/26/2016 10:15AM EST.
+ >> Date/Time select may be initialized with ng-model=null as well as
+ already predefined date/time. If date/time predefined, it should be rendered
+ within time zone according to sbTimeZone attribute, and date in calendar
+ as well as time in time slots view should be selected/activated.
